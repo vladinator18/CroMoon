@@ -1,0 +1,164 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Portfolio</title>
+    <link rel="stylesheet" href="works.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap">
+</head>
+<body>
+    <button id="sidebarToggle" class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li>
+                <button class="menu-item" data-target="#about-menu">
+                    <i class="fas fa-user"></i>
+                </button>
+                <ul id="about-menu" class="submenu">
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </li>
+            <li>
+                <button class="menu-item" data-target="#works-menu">
+                    <i class="fas fa-briefcase"></i>
+                </button>
+                <ul id="works-menu" class="submenu">
+                    <li><a href="#works">Works</a></li>
+                </ul>
+            </li>
+            <li>
+                <button class="menu-item" data-target="#contact-menu">
+                    <i class="fas fa-envelope"></i>
+                </button>
+                <ul id="contact-menu" class="submenu">
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#commission" class="menu-item commission-btn">
+                    <i class="fas fa-pencil-alt">Commision me</i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Commission Your Artwork</h1>
+        <p>Custom illustrations made just for you.</p>
+        <a href="#pricing" class="cta-button">Get Started</a>
+    </section>
+
+    <!-- Commission Rates -->
+    <section class="rates" id="pricing">
+        <h2>Commission Rates</h2>
+
+        <div class="category">
+            <h3>Bust Portrait</h3>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="bust1.jpg" alt="Bust Sample 1"></div>
+                    <div class="swiper-slide"><img src="bust2.jpg" alt="Bust Sample 2"></div>
+                    <div class="swiper-slide"><img src="bust3.jpg" alt="Bust Sample 3"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="pricing-card">
+                <p><strong>Price:</strong> $45 | PHP 2500</p>
+                <p><strong>Details:</strong> Bust character portrait</p>
+                <p><strong>Inclusions:</strong> Preferred solid color background (default is plain white)</p>
+                <p><strong>Wait Time:</strong> 4 - 5 days</p>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Half-Body</h3>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="halfbody1.jpg" alt="Half-Body Sample 1"></div>
+                    <div class="swiper-slide"><img src="halfbody2.jpg" alt="Half-Body Sample 2"></div>
+                    <div class="swiper-slide"><img src="halfbody3.jpg" alt="Half-Body Sample 3"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="pricing-card">
+                <p><strong>Price:</strong> $60 | PHP 3200</p>
+                <p><strong>Details:</strong> Half-body character illustration</p>
+                <p><strong>Inclusions:</strong> Preferred solid color background (default is plain white)</p>
+                <p><strong>Wait Time:</strong> 1 week+</p>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Chibi (Detailed)</h3>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="chibi_detailed1.jpg" alt="Chibi Detailed Sample 1"></div>
+                    <div class="swiper-slide"><img src="chibi_detailed2.jpg" alt="Chibi Detailed Sample 2"></div>
+                    <div class="swiper-slide"><img src="chibi_detailed3.jpg" alt="Chibi Detailed Sample 3"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="pricing-card">
+                <p><strong>Price:</strong> $35 | PHP 2000</p>
+                <p><strong>Details:</strong> Chibi drawing with detailed rendering</p>
+                <p><strong>Inclusions:</strong> Full-body chibi with solid color background</p>
+                <p><strong>Wait Time:</strong> 4 - 5 days</p>
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>Chibi (Simple)</h3>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="chibi_simple1.jpg" alt="Chibi Simple Sample 1"></div>
+                    <div class="swiper-slide"><img src="chibi_simple2.jpg" alt="Chibi Simple Sample 2"></div>
+                    <div class="swiper-slide"><img src="chibi_simple3.jpg" alt="Chibi Simple Sample 3"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="pricing-card">
+                <p><strong>Price:</strong> $25 | PHP 1200</p>
+                <p><strong>Details:</strong> Chibi drawing with simple rendering</p>
+                <p><strong>Inclusions:</strong> Full-body chibi with solid color background</p>
+                <p><strong>Wait Time:</strong> 3 - 4 days</p>
+            </div>
+        </div>
+        
+        <a href="#" class="commission-btn">Commission Me</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Commission Showcase</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        
+document.addEventListener("DOMContentLoaded", () => {
+    const sidebarToggle = document.getElementById("sidebarToggle");
+    const sidebar = document.getElementById("sidebar");
+
+    sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+    });
+})
+    </script>
+</body>
+</html>

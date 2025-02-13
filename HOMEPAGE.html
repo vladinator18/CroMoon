@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap">
+</head>
+<body>
+    <button id="sidebarToggle" class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li>
+                <button class="menu-item" data-target="#about-menu">
+                    <i class="fas fa-user"></i>
+                </button>
+                <ul id="about-menu" class="submenu">
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </li>
+            <li>
+                <button class="menu-item" data-target="#works-menu">
+                    <i class="fas fa-briefcase"></i>
+                </button>
+                <ul id="works-menu" class="submenu">
+                    <li><a href="#works">Works</a></li>
+                </ul>
+            </li>
+            <li>
+                <button class="menu-item" data-target="#contact-menu">
+                    <i class="fas fa-envelope"></i>
+                </button>
+                <ul id="contact-menu" class="submenu">
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#commission" class="menu-item commission-btn">
+                    <i class="fas fa-pencil-alt">Commision me</i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+    <main class="layout">
+        <section id="about" class="container-2">
+            <img class="artist-picture-icon" alt="Artist Picture" src="Crouqette moon img.jpg">
+        
+            <div class="branding">
+                <h1>Croquette Moon</h1>
+                <button class="cta-button">
+                    <span>See My Works</span>
+                    <img src="Vector 1.svg" alt="Arrow icon">
+                </button>
+            </div>
+        </section>
+        <section id="works" class="container-3">
+        
+            <div class="bg-1">
+                        <h1>About Me</h1>
+            <div class="Desription">
+
+                <h3>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nulla nulla, tincidunt eget massa eget, vulputate rutrum est. Mauris porta ligula vel felis posuere convallis. Mauris orci nibh, laoreet sed odio eu, porttitor hendrerit sem. Morbi volutpat quam justo. Fusce ut diam quis dui auctor venenatis. Donec consectetur, sapien non ornare posuere, erat sapien eleifend nisl, at rhoncus erat tortor sit amet libero. Suspendisse tempus aliquam ligula. Nulla non efficitur augue. Duis in aliquet nisi. Morbi imperdiet sapien et nunc mattis, vel vestibulum metus finibus. Vivamus malesuada felis bibendum, elementum ipsum vel, consequat nisl. Aliquam tempor magna et lorem molestie, fermentum varius elit porta. Nam sagittis vel nulla in suscipit. Donec condimentum lacinia aliquet. Mauris id ante quis mi porta mattis. Proin lectus justo, scelerisque quis nisi facilisis, volutpat placerat dui.</h3>
+            </div>
+            </div>
+            <div class="categories">
+                <div class="container">
+                    <!-- Character Design Box -->
+                    <div class="box">
+                        <h2>Character Design</h2>
+                        <img src="character-design.jpg" alt="Character Design">
+                        <p>Explore our detailed character designs, from initial concepts to finished illustrations.</p>
+                        <a href="#">See More</a>
+                    </div>
+            
+                    <!-- Environment Design Box -->
+                    <div class="box">
+                        <h2>Environment Design</h2>
+                        <img src="environment-design.jpg" alt="Environment Design">
+                        <p>Delve into the environments where our characters live and the worlds they explore.</p>
+                        <a href="#">See More</a>
+                    </div>
+            
+                    <!-- Merchandise Box -->
+                    <div class="box">
+                        <h2>Merchandise</h2>
+                        <img src="merchandise.jpg" alt="Merchandise">
+                        <p>Get your hands on exclusive character-themed merchandise, from apparel to collectibles.</p>
+                        <a href="#">See More</a>
+                        
+                    </div>
+                    <div class="box">
+                        <h2>Work With Me</h2>
+                        <img src="merchandise.jpg" alt="Merchandise">
+                        <p>Gmail here </p>
+                        <a href="#">See More</a>
+                        
+                    </div>
+                    </div>
+                    <section id="works" class="container-4">
+
+
+                        <div class="commission-container">
+                            <!-- Left Section: Buttons -->
+                            <div class="button-section">
+                                <button id="tosButton" class="action-btn">Terms of Service</button>
+                                <button id="ratesButton" class="action-btn">Rates</button>
+                                <button id="faqButton" class="action-btn">FAQ</button>
+                                <button id="commissionMeButton" class="action-btn commission-btn">Commission Me</button>
+                            </div>
+                    
+                            <!-- Right Section: Description -->
+                            <div class="description-section">
+                                <h2>Commission Details</h2>
+                                <p>Get a custom design tailored to your needs. Whether you're looking for character art, environments, or merchandise, I offer personalized services to make your vision a reality.</p>
+                            </div>
+                        </div>
+                    
+                        <!-- Modals -->
+                        <div id="modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close-btn">&times;</span>
+                                <h2 id="modalTitle"></h2>
+                                <p id="modalText"></p>
+                            </div>
+                        </div>
+                    
+
+                    </section>       
+        
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const sidebarToggle = document.getElementById("sidebarToggle");
+    const sidebar = document.getElementById("sidebar");
+
+    sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+    });
+});
+
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("modal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalText = document.getElementById("modalText");
+    const closeBtn = modal.querySelector(".close-btn");
+
+    const content = {
+        tos: {
+            title: "Terms of Service",
+            text: "Here you can define the terms of your commission process, including timelines, payment policies, and restrictions on usage.",
+        },
+        rates: {
+            title: "Rates",
+            text: "Detailed information about the rates for various services provided. Customize this section with your pricing structure.",
+        },
+        faq: {
+            title: "FAQ",
+            text: "Frequently Asked Questions about your commission process. Add answers to common questions here.",
+        },
+    };
+
+    // Show modal with specific content
+    const showModal = (type) => {
+        modalTitle.textContent = content[type].title;
+        modalText.textContent = content[type].text;
+        modal.style.display = "flex";
+    };
+
+    // Add event listeners to buttons
+    document.getElementById("tosButton").addEventListener("click", () => showModal("tos"));
+    document.getElementById("ratesButton").addEventListener("click", () => showModal("rates"));
+    document.getElementById("faqButton").addEventListener("click", () => showModal("faq"));
+
+    // Close modal
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    // Close modal when clicking outside content
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+    </script>
+</body></html> 
