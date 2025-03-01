@@ -26,7 +26,7 @@
                     <i class="fas fa-briefcase"></i>
                 </button>
                 <ul id="works-menu" class="submenu">
-                    <li><a href="/works.html">Works</a></li>
+                    <li><a href="#works">Works</a></li>
                 </ul>
             </li>
             <li>
@@ -65,6 +65,20 @@
 
                 <h3>orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nulla nulla, tincidunt eget massa eget, vulputate rutrum est. Mauris porta ligula vel felis posuere convallis. Mauris orci nibh, laoreet sed odio eu, porttitor hendrerit sem. Morbi volutpat quam justo. Fusce ut diam quis dui auctor venenatis. Donec consectetur, sapien non ornare posuere, erat sapien eleifend nisl, at rhoncus erat tortor sit amet libero. Suspendisse tempus aliquam ligula. Nulla non efficitur augue. Duis in aliquet nisi. Morbi imperdiet sapien et nunc mattis, vel vestibulum metus finibus. Vivamus malesuada felis bibendum, elementum ipsum vel, consequat nisl. Aliquam tempor magna et lorem molestie, fermentum varius elit porta. Nam sagittis vel nulla in suscipit. Donec condimentum lacinia aliquet. Mauris id ante quis mi porta mattis. Proin lectus justo, scelerisque quis nisi facilisis, volutpat placerat dui.</h3>
             </div>
+
+              
+            <section id="recent-works" class="container-3">
+                <h2>Recent Works</h2>
+                <label for="filterRecent">Filter by Tag:</label>
+                <select id="filterRecent">
+                    <option value="all">All</option>
+                    <option value="Character Design">Character Design</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Merchandise">Merchandise</option>
+                </select>
+                <div class="recent-images"></div>
+                <a href="gallery.html" class="cta-button">View More</a>
+            </section>
             </div>
             <div class="categories">
                 <div class="container">
@@ -74,6 +88,8 @@
                         <img src="character-design.jpg" alt="Character Design">
                         <p>Explore our detailed character designs, from initial concepts to finished illustrations.</p>
                         <a href="#">See More</a>
+
+                        
                     </div>
             
                     <!-- Environment Design Box -->
@@ -130,7 +146,10 @@
                     
 
                     </section>       
-        
+
+            
+
+   
     </main>
     <footer>
         <p></p>
@@ -191,5 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-    </script>
+</script>
+<script src="homepage-gallery.js"></script>
+
 </body></html> 
