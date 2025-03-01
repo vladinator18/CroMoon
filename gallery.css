@@ -1,0 +1,42 @@
+.gallery-container {
+    text-align: center;
+    padding: 50px;
+}
+
+#searchInput {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.image-gallery img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+}
+
+#prevBtn, #nextBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #943131;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+    background-color: #751919;
+}

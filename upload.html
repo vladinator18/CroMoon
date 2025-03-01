@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="upload.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="sidebarToggle" class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="upload.html">Upload</a></li>
+        </ul>
+    </nav>
+
+    <section id="upload-section" class="container-3">
+        <h2>Upload Image</h2>
+        <form id="uploadForm">
+            <input type="file" id="imageInput" accept="image/*" required>
+            <label>Select Tags:</label>
+            <div class="tag-options">
+                <label><input type="checkbox" value="Character Design"> Character Design</label>
+                <label><input type="checkbox" value="Environment"> Environment</label>
+                <label><input type="checkbox" value="Merchandise"> Merchandise</label>
+            </div>
+            <button type="submit">Upload</button>
+        </form>
+        <p id="uploadStatus"></p>
+    </section>
+    
+    <script src="upload.js"></script>
+
+    <script src="upload.js"></script>
+</body>
+</html>
