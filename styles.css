@@ -320,6 +320,31 @@ footer {
     margin-top: 20px; /* Add spacing for mobile */
 }
 /* Responsive Design */
+.recent-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.homepage-image {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.homepage-image:hover {
+    transform: scale(1.1);
+}
+
+#filterRecent {
+    margin-bottom: 20px;
+    padding: 8px;
+    font-size: 1rem;
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 90%;
