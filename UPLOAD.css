@@ -1,0 +1,27 @@
+.upload-container {
+    text-align: center;
+    padding: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #943131;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #751919;
+}
