@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function displayImages(filter = "") {
         galleryContainer.innerHTML = "";
-        let images = JSON.parse(localStorage.getItem("gallery")) || [];
+        let images = JSON.parse
 
         if (filter) {
             images = images.filter(img => img.tags.some(tag => tag.toLowerCase().includes(filter.toLowerCase())));
@@ -24,3 +24,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     displayImages();
 });
+
