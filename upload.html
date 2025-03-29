@@ -6,6 +6,7 @@
     <title>Upload Image</title>
     <link rel="stylesheet" href="upload.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <button id="sidebarToggle" class="menu-btn">
@@ -23,6 +24,11 @@
         <h2>Upload Image</h2>
         <form id="uploadForm">
             <input type="file" id="imageInput" accept="image/*" required>
+            <img id="previewImage" src="#" alt="Image Preview" style="display: none; width: 200px; height: auto;">
+            
+            <label for="imageDescription">Description:</label>
+            <textarea id="imageDescription" placeholder="Enter image description..."></textarea>
+
             <label>Select Tags:</label>
             <div class="tag-options">
                 <label><input type="checkbox" value="Character Design"> Character Design</label>

@@ -7,12 +7,15 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
-input, button {
+input, button, textarea {
     margin: 10px;
     padding: 10px;
     font-size: 1rem;
+    width: 80%;
+    max-width: 400px;
 }
 
 button {
@@ -20,8 +23,15 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
 button:hover {
     background-color: #751919;
+}
+
+#previewImage {
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

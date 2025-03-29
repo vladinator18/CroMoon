@@ -1,27 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
     const galleryContainer = document.querySelector(".image-gallery");
     const searchInput = document.getElementById("searchInput");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
 
-    function displayImages(filter = "") {
+    let gallery = JSON.parse(localStorage.getItem("gallery")) || [];
+    let currentPage = 1;
+    const imagesPerPage = 6;
+
+    function renderGallery(filteredGallery = gallery) {
         galleryContainer.innerHTML = "";
-        let images = JSON.parse
 
-        if (filter) {
-            images = images.filter(img => img.tags.some(tag => tag.toLowerCase().includes(filter.toLowerCase())));
+        const startIndex = (currentPage - 1) * imagesPerPage;
+        const paginatedGallery = filteredGallery.slice(startIndex, startIndex + imagesPerPage);
+
+        if (paginatedGallery.length === 0) {
+            galleryContainer.innerHTML = "<p>No images found.</p>";
+            return;
         }
 
-        images.forEach(img => {
-            const imgElement = document.createElement("img");
-            imgElement.src = img.url;
-            imgElement.alt = img.description || "Uploaded image";
-            galleryContainer.appendChild(imgElement);
+        paginatedGallery.forEach(image => {
+            const imageElement = document.createElement("div");
+            imageElement.classList.add("gallery-item");
+            imageElement.innerHTML = `
+                <img src="${image.url}" alt="${image.filename}">
+                <p><strong>${image.filename}</strong></p>
+                <p>Tags: ${image.tags.join(", ")}</p>
+                <p>${new Date(image.uploadDate).toLocaleString()}</p>
+            `;
+            galleryContainer.appendChild(imageElement);
         });
+
+        updatePaginationButtons(filteredGallery.length);
+    }
+
+    function updatePaginationButtons(totalItems) {
+        prevBtn.style.display = currentPage > 1 ? "block" : "none";
+        nextBtn.style.display = currentPage * imagesPerPage < totalItems ? "block" : "none";
     }
 
     searchInput.addEventListener("input", () => {
-        displayImages(searchInput.value);
+        const query = searchInput.value.toLowerCase();
+        const filteredGallery = gallery.filter(item =>
+            item.tags.some(tag => tag.toLowerCase().includes(query))
+        );
+        currentPage = 1; // Reset to first page on new search
+        renderGallery(filteredGallery);
     });
 
-    displayImages();
-});
+    prevBtn.addEventListener("click", () => {
+        if (currentPage > 1) {
+            currentPage--;
+            renderGallery();
+        }
+    });
 
+    nextBtn.addEventListener("click", () => {
+        if (currentPage * imagesPerPage < gallery.length) {
+            currentPage++;
+            renderGallery();
+        }
+    });
+
+    renderGallery();
+});
