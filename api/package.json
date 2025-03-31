@@ -1,0 +1,16 @@
+{
+    "name": "your-project-name",
+    "version": "1.0.0",
+    "description": "Your project with Vercel Blob integration",
+    "dependencies": {
+      "@vercel/blob": "^0.18.0",
+      "uuid": "^9.0.1"
+    },
+    "devDependencies": {
+    },
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start"
+    }
+  }

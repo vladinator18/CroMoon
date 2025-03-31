@@ -13,9 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         recentImages.forEach(img => {
             const imgElement = document.createElement("img");
-            imgElement.src = img.url;
+            imgElement.src = img.url; // This remains the same as Vercel Blob URLs are directly accessible
             imgElement.alt = img.filename;
             imgElement.classList.add("homepage-image");
+            
+            // Add click handler to open the image in the gallery page
+            imgElement.addEventListener('click', () => {
+                window.location.href = '/gallery.html';
+            });
+            
             recentGallery.appendChild(imgElement);
         });
     }

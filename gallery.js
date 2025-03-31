@@ -27,8 +27,40 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p><strong>${image.filename}</strong></p>
                 <p>Tags: ${image.tags.join(", ")}</p>
                 <p>${new Date(image.uploadDate).toLocaleString()}</p>
+                <button class="delete-btn" data-blob-url="${image.url}">Delete</button>
             `;
             galleryContainer.appendChild(imageElement);
+        });
+
+        // Add event listeners to delete buttons
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', async function() {
+                const blobUrl = this.getAttribute('data-blob-url');
+                if (confirm('Are you sure you want to delete this image?')) {
+                    try {
+                        // Send delete request to Vercel Blob API
+                        const response = await fetch('/api/delete-blob', {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ url: blobUrl })
+                        });
+                        
+                        if (response.ok) {
+                            // Remove from local storage
+                            gallery = gallery.filter(item => item.url !== blobUrl);
+                            localStorage.setItem("gallery", JSON.stringify(gallery));
+                            renderGallery(); // Re-render gallery
+                        } else {
+                            alert('Failed to delete image.');
+                        }
+                    } catch (error) {
+                        console.error('Error deleting image:', error);
+                        alert('Error deleting image. Please try again.');
+                    }
+                }
+            });
         });
 
         updatePaginationButtons(filteredGallery.length);

@@ -10,3 +10,24 @@ document.getElementById("artworkFilter").addEventListener("change", function () 
         }
     });
 });
+
+// Optional: Add functionality to load images from Vercel Blob if needed
+function loadCategoryImages(category) {
+    const gallery = JSON.parse(localStorage.getItem("gallery")) || [];
+    const categoryImages = gallery.filter(img => img.tags.includes(category));
+    
+    // Use the categoryImages array to populate your works sections
+    // This is an example and should be adapted to your HTML structure
+    const categoryContainer = document.querySelector(`.category[data-category="${category}"]`);
+    if (categoryContainer) {
+        const imagesContainer = categoryContainer.querySelector('.images-container');
+        imagesContainer.innerHTML = '';
+        
+        categoryImages.forEach(img => {
+            const imageEl = document.createElement('img');
+            imageEl.src = img.url;
+            imageEl.alt = img.filename;
+            imagesContainer.appendChild(imageEl);
+        });
+    }
+}
