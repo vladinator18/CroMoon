@@ -88,7 +88,16 @@ h1 {
     display: flex;
     align-items: center;
 }
-/* From Uiverse.io by vinodjangid07 */ 
+/* Centering Styles for Button Parent Container */
+.button-container {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100px; /* Adjust height as needed */
+    margin: 20px 0; /* Optional: Add margin for spacing */
+}
+
+/* Submit Button Styles */
 .submitBtn {
     width: 120px;
     height: 40px;
@@ -102,35 +111,28 @@ h1 {
     font-weight: 600;
     cursor: pointer;
     color: white;
-    background: linear-gradient(to left,rgb(230, 35, 0),rgb(255, 174, 0));
+    background: linear-gradient(to left, rgb(230, 35, 0), rgb(255, 174, 0));
     letter-spacing: 0.7px;
-   
-  }
-  
-  .submitBtn:hover .arrow {
+}
+
+.submitBtn:hover .arrow {
     animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  }
-  
-  @keyframes slide-in-left {
+}
+
+@keyframes slide-in-left {
     0% {
-      transform: translateX(-10px);
-      opacity: 0;
+        transform: translateX(-10px);
+        opacity: 0;
     }
-  
     100% {
-      transform: translateX(0px);
-      opacity: 1;
+        transform: translateX(0px);
+        opacity: 1;
     }
-  }
-  
-  .submitBtn:active {
+}
+
+.submitBtn:active {
     transform: scale(0.97);
-  }
-  
-  
-  .submitBtn:active {
-    transform: scale(0.97);
-  }
+}
 /* Box Section */
 .container {
     display: flex;
