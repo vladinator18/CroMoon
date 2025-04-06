@@ -84,7 +84,10 @@ h1 {
     font-size: 3rem;
     margin: 20px 0;
 }
-
+.branding {
+    display: flex;
+    align-items: center;
+}
 /* From Uiverse.io by vinodjangid07 */ 
 .submitBtn {
     width: 120px;
@@ -101,7 +104,7 @@ h1 {
     color: white;
     background: linear-gradient(to left,rgb(230, 35, 0),rgb(255, 174, 0));
     letter-spacing: 0.7px;
-    align-content: center;
+   
   }
   
   .submitBtn:hover .arrow {
