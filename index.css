@@ -123,11 +123,6 @@ h1 {
     transform: scale(0.97);
   }
   
-    100% {
-      transform: translateX(0px);
-      opacity: 1;
-    }
-  }
   
   .submitBtn:active {
     transform: scale(0.97);
