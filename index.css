@@ -86,7 +86,7 @@ h1 {
 }
 
 /* From Uiverse.io by vinodjangid07 */ 
-.cta-button {
+.submitBtn {
     width: 120px;
     height: 40px;
     border-radius: 30px;
@@ -103,7 +103,7 @@ h1 {
     letter-spacing: 0.7px;
   }
   
-  .cta-button:hover .arrow {
+  .submitBtn:hover .arrow {
     animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
   
@@ -112,6 +112,16 @@ h1 {
       transform: translateX(-10px);
       opacity: 0;
     }
+  
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+  .submitBtn:active {
+    transform: scale(0.97);
+  }
   
     100% {
       transform: translateX(0px);
